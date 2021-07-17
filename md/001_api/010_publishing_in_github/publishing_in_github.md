@@ -142,3 +142,19 @@ export const Footer = () => {
 ```
 
 И коммитим все в ветку gh-pages.
+
+У меня не получается.
+
+Он все делает вот так добавляет изменения
+
+```shell
+git add -A
+```
+
+```shell
+git commit -m"gh-pages added"
+```
+
+```shell
+git push
+```
