@@ -34,11 +34,6 @@ export const Shop = () => {
     }
   };
 
-  const removeFromBasket = (itemId) => {
-    const newOrder = order.filter((el) => el.id !== itemId);
-    setOrder(newOrder);
-  };
-
   const handleBasketShow = () => {
     setBasketShow(!isBasketShow);
   };
@@ -65,11 +60,7 @@ export const Shop = () => {
         <GoodsList goods={goods} addToBasket={addToBasket} />
       )}
       {isBasketShow && (
-        <BasketList
-          order={order}
-          handleBasketShow={handleBasketShow}
-          removeFromBasket={removeFromBasket}
-        />
+        <BasketList order={order} handleBasketShow={handleBasketShow} />
       )}
     </main>
   );
