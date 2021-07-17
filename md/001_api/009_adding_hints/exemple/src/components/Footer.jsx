@@ -6,12 +6,7 @@ export const Footer = () => {
       <div className="footer-copyright">
         <div className="container">
           {new Date().getFullYear()} Copyright Text
-          <a
-            href="https://github.com/Konstantine899/Showecase"
-            className="gray-text text-lighten-4 right"
-            rel="noreferrer"
-            target="_blank"
-          >
+          <a href="#!" className="gray-text text-lighten-4 right">
             Repo
           </a>
         </div>
