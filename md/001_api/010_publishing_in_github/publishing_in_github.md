@@ -152,7 +152,7 @@ git add -A
 ```
 
 ```shell
-git commit -m"gh-pages added"
+git commit -m "gh-pages added"
 ```
 
 ```shell
