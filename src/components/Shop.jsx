@@ -4,12 +4,14 @@ import { Preloader } from './Preloader.jsx';
 import { GoodsList } from './GoodsList';
 import { Cart } from './Cart';
 import { BasketList } from './BasketList';
+import { Alert } from './Alert';
 
 export const Shop = () => {
   const [goods, setGoods] = useState([]);
   const [loading, setLoading] = useState(true);
   const [order, setOrder] = useState([]);
   const [isBasketShow, setBasketShow] = useState(false);
+  const [alertName, setAlertName] = useState('');
 
   const addToBasket = (item) => {
     const itemIndex = order.findIndex((orderItem) => orderItem.id === item.id);
@@ -32,6 +34,7 @@ export const Shop = () => {
       });
       setOrder(newOrder);
     }
+    setAlertName(item.name);
   };
 
   const removeFromBasket = (itemId) => {
@@ -72,6 +75,10 @@ export const Shop = () => {
     setBasketShow(!isBasketShow);
   };
 
+  const closeAlert = () => {
+    setAlertName('');
+  };
+
   useEffect(function getGoods() {
     fetch(API_URL, {
       headers: {
@@ -102,6 +109,7 @@ export const Shop = () => {
           decQuantity={decQuantity}
         />
       )}
+      {alertName && <Alert name={alertName} closeAlert={closeAlert} />}
     </main>
   );
 };
