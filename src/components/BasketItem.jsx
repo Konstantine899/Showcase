@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ShopContext } from './contest.js';
 
 export const BasketItem = (props) => {
   const {
@@ -10,6 +11,9 @@ export const BasketItem = (props) => {
     incQuantity = Function.prototype,
     decQuantity = Function.prototype,
   } = props;
+
+  const { example } = useContext(ShopContext);
+  console.log(example);
 
   return (
     <li className="collection-item  ">
